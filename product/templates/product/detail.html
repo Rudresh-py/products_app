@@ -1,0 +1,11 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'product/style.css' %}" >
+<button><a href="{% url 'product:update' product.id %}">Update</a></button>
+
+<div class="detail">
+    <a href=""><img src="{{ product.image.url}}" width="150px" alt="{{ product.name_txt }}"></a> <br>
+   {{ product.name_txt }} <br> {{ product.description }}<br> ₹{{ product.price }}<br>
+
+</div> <br>
+<button><a href="{% url 'product:delete' product.id %}">Delete</a></button>
+

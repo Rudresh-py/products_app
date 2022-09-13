@@ -1,0 +1,20 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'product/style.css' %}" >
+
+<button><a href="{% url 'product:create' %}">Create</a></button> <br>
+
+{% if product_list %}
+
+    {% for product in product_list %}
+<div class="index">
+    <a href="{% url 'product:detail' product.id %}"><img src="{{ product.image.url}}" width="150px" alt="{{ product.name_txt }}"></a> <hr> <br>
+    <div class="info"> <h3>{{ product.name_txt }}</h3>
+    <p> ₹{{ product.price }}</p>
+     {% for rate in prod.rating_set.all %}
+        {{ rate.rate }}
+
+    {% endfor %}
+    </div>
+</div> <br>
+    {% endfor %}
+{% endif %}
