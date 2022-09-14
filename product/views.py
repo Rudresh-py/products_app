@@ -46,7 +46,3 @@ class ProductDelete(generic.DeleteView):
     def get_success_url(self):
         return reverse('product:index')
 
-
-def rating(request):
-    data = Rating.objects.all(pk=id)
-    return render(request, 'product/index.html', {'prod': data})
