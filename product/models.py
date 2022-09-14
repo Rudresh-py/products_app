@@ -13,7 +13,6 @@ class Product(models.Model):
         return self.name_txt
 
 
-
 class Rating(models.Model):
     name = models.ForeignKey(Product, on_delete=models.CASCADE)
     rate = models.IntegerField(default=0)

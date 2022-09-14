@@ -10,11 +10,19 @@
     <a href="{% url 'product:detail' product.id %}"><img src="{{ product.image.url}}" width="150px" alt="{{ product.name_txt }}"></a> <hr> <br>
     <div class="info"> <h3>{{ product.name_txt }}</h3>
     <p> ₹{{ product.price }}</p>
-     {% for rate in prod.rating_set.all %}
-        {{ rate.rate }}
+{% block content %}
 
-    {% endfor %}
+{% for rat in prod %}
+
+  {{rat.rate }}
+{% endfor %}
+
+{% endblock content %}
+{#        {% for rate in prod.rating_set.all %}#}
+{#        {{ rate.rate }}#}
+{##}
+{#    {% endfor %}#}
     </div>
-</div> <br>
+</div>
     {% endfor %}
 {% endif %}

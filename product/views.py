@@ -47,10 +47,6 @@ class ProductDelete(generic.DeleteView):
         return reverse('product:index')
 
 
-def rating(request, product_id):
-    product = get_object_or_404(Product, pk=product_id)
-
-    selected_product = product.rating_set.get(pk=request.POST['rate'])
-    selected_product.rate += 1
-    selected_product.save()
-    return render(request, 'product/index.html', {'prod': product})
+def rating(request):
+    data = Rating.objects.all(pk=id)
+    return render(request, 'product/index.html', {'prod': data})
