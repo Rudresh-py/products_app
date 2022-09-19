@@ -1,6 +1,6 @@
 .index{
     border: solid 2px black;
-    width: 180px;
+    width: 300px;
     height: auto;
     display: flex;
 
@@ -10,8 +10,8 @@ a{
     color: black;
 }
 .info{
-    margin-top: -40px;
-    margin-left: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
 }
 button{
     margin-bottom: 10px;

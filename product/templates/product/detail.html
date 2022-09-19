@@ -5,6 +5,13 @@
 <div class="detail">
     <a href=""><img src="{{ product.image.url}}" width="150px" alt="{{ product.name_txt }}"></a> <br>
    {{ product.name_txt }} <br> {{ product.description }}<br> ₹{{ product.price }}<br>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    {% for rat in product.rating_set.all %}
+  <input type="radio" id="uniqu" name="choice" id="choice{{ forloop.counter }} " value="{{ vote.id }}">
+      <label for="choice{{ forloop.counter }} ">{{ rat.rate }}</label>
+
+    {% endfor %}
+    <input class="button" type="submit" value="Vote">
 
 </div> <br>
 <button><a href="{% url 'product:delete' product.id %}">Delete</a></button>
