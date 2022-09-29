@@ -7,9 +7,12 @@
 
     {% for product in product_list %}
 <div class="index">
-    <a href="{% url 'product:detail' product.id %}"><img src="{{ product.image.url}}" width="150px" alt="{{ product.name_txt }}"></a> <br>  <br>
+<div class="images">
+    <a href="{% url 'product:detail' product.id %}"><img src="{{ product.image.url}}" width="150px" ></a>
+    </div>
+    <br>
     <div class="info">
-        <h3>{{ product.name_txt }}</h3>
+    <h3>{{ product.name_txt }}</h3>
     <p> ₹{{ product.price }}</p>
     </div>
 </div>

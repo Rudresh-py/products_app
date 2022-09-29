@@ -1,8 +1,7 @@
 .index{
-    border: solid 2px black;
-    width: 300px;
+    border: solid 1px black;
+    width: 200px;
     height: auto;
-    display: flex;
 
 }
 a{
@@ -10,7 +9,7 @@ a{
     color: black;
 }
 .info{
-    margin-top: 10px;
+    margin-top: -10px;
     margin-left: 20px;
 }
 button{
