@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<form action="{% url 'product:rating' product.id %}" method="post">
+    {% csrf_token %}
 
-</body>
-</html>
+ <h2 align="center">Rating</h2>
+    <h1>{{ product.name_txt }}</h1>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    {% for rat in product.rating_set.all %}
+        <ul id="uniqu">
+        <li><input type="radio" id="uniqu" name="rating" id="rating{{ forloop.counter }} " value="{{ rat.id }}">
+      <label for="choice{{ forloop.counter }} ">{{ rat.rate_range }}</label></li>
+        </ul>
+
+    {% endfor %}
+    <input class="button" type="submit" value="Rate">
+{#<a href="{% url 'polls:index' %}">Back to Question</a>#}
+<button><a href="{% url 'polls:index' %}">Back to product</a>
+</button>
+
+</form>
