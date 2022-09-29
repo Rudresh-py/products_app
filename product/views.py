@@ -47,15 +47,15 @@ class ProductDelete(generic.DeleteView):
         return reverse('product:index')
 
 
-def vote(request, product_id):
+def rating(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     try:
-        selected_product = product.rating_set_set.get(pk=request.POST['rating'])
+        selected_rate = product.rating_set.get(pk=request.POST['rating'])
     except (KeyError, Rating.DoesNotExist):
-        return render(request, 'polls/detail.html',
-                      {'product': product, 'error_message': "you didnt select a choice"})
+        return render(request, 'product/rating.html',
+                      {'question': product, 'error_message': "you didnt select a choice"})
 
     else:
-        selected_product.rate
-        selected_product.save()
-    return HttpResponseRedirect(reverse('polls:results', args=(product.id,)))
+        selected_rate.rating += 1
+        selected_rate.save()
+    return HttpResponseRedirect(reverse('product:index', args=(product.id,)))

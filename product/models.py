@@ -15,7 +15,8 @@ class Product(models.Model):
 
 class Rating(models.Model):
     name = models.ForeignKey(Product, on_delete=models.CASCADE)
-    rate = models.IntegerField(default=0)
+    rate_range = models.IntegerField(default=0)
+    rating = models.IntegerField(default=0)
 
     def __int__(self):
         return self.rate

@@ -4,8 +4,8 @@
 
 <div class="detail">
     <a href=""><img src="{{ product.image.url}}" width="150px" alt="{{ product.name_txt }}"></a> <br>
-   {{ product.name_txt }} <br> {{ product.description }}<br> ₹{{ product.price }}<br>
-
+   <p> <b>{{ product.name_txt }}</b> <br> {{ product.description }}<br> ₹{{ product.price }}<br>
+    <a href="">give me rating</a> </p>
 
 </div> <br>
 <button><a href="{% url 'product:delete' product.id %}">Delete</a></button>
