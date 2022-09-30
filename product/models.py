@@ -20,3 +20,8 @@ class Rating(models.Model):
 
     def __int__(self):
         return self.rate
+
+from django.db import models
+
+class MyObject(models.Model):
+    score = models.FloatField(max_length=1, default=0)
