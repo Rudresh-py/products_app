@@ -1,5 +1,3 @@
-import json
-from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.views import generic
