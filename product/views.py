@@ -1,12 +1,9 @@
-from django.http import HttpResponseRedirect, HttpResponse
+
 from django.urls import reverse
 from django.views import generic
-
-import product
-from .models import Product, Rating
+from .models import Product
 from django.utils import timezone
 from .forms import ProductForm, RateForm
-from django.shortcuts import get_object_or_404, render
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -49,7 +46,6 @@ def signin(request):
         if user is not None:
             login(request, user)
             fname = user.first_name
-            # messages.success(request, "Logged In Sucessfully!!")
             return render(request, "product/home.html", {"fname": fname})
         else:
             messages.error(request, "Bad Credentials!!")
