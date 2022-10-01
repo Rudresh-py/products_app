@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h3>sign up</h3>
+
+<form action="/signup" method="post" >
+{% csrf_token %}
+    <div class="changelist-form-container">
+    <label >Username</label>
+    <input type="text" id="username" name="username" placeholder="create a username" required> <br> <br>
+
+    <label >First name</label>
+    <input type="text" id="fname" name="fname" placeholder="create a fname" required>  <br> <br>
+
+    <label >Last name</label>
+    <input type="text" id="lname" name="lname" placeholder="create a lname" required>  <br> <br>
+
+    <label >Email</label>
+    <input type="email" id="email" name="email" placeholder="create a email" required>  <br> <br>
+
+    <label >Password</label>
+    <input type="pass1" id="pass1" name="pass1" placeholder="create a password" required>  <br> <br>
+
+    <label >Confirm your password</label>
+    <input type="pasS2" id="pass2" name="pass2" placeholder="create a password2" required>  <br> <br>
+        </div>
+
+     <button type="submit" align="right">sign up</button>
+
+</form>
+    </div>
+
+</body>
+</html>

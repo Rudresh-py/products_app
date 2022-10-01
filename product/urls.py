@@ -7,7 +7,11 @@ from .models import Product
 
 app_name = 'product'
 urlpatterns = [
-                  path('', views.IndexView.as_view(), name='index'),
+                  path('', views.home, name="home"),
+                  path('signup', views.signup, name="signup"),
+                  path('signin', views.signin, name="signin"),
+                  path('signout', views.signout, name="signout"),
+                  path('index/', views.IndexView.as_view(), name='index'),
                   path('create/', views.ProductCreate.as_view(), name='create'),
                   path('<int:pk>/detail/', views.ProductDetail.as_view(), name='detail'),
                   path('<int:pk>/update', views.ProductUpdate.as_view(), name='update'),
