@@ -17,10 +17,10 @@ def home(request):
 def signup(request):
     if request.method == "POST":
         username = request.POST['username']
-        fname = request.POST['fname'],
-        lname = request.POST['lname'],
-        email = request.POST['email'],
-        pass1 = request.POST['pass1'],
+        fname = request.POST['fname']
+        lname = request.POST['lname']
+        email = request.POST['email']
+        pass1 = request.POST['pass1']
         pass2 = request.POST['pass2']
 
         myuser = User.objects.create_user(username, email, pass1)
@@ -46,10 +46,10 @@ def signin(request):
         if user is not None:
             login(request, user)
             fname = user.first_name
-            return render(request, "product/home.html", {"fname": fname})
+            return render(request, 'product/index.html', {"fname": fname})
         else:
             messages.error(request, "Bad Credentials!!")
-            return redirect('home')
+            return redirect('product:home')
 
     return render(request, "product/signin.html")
 
@@ -57,7 +57,7 @@ def signin(request):
 def signout(request):
     logout(request)
     messages.success(request, "logged out succesfully created")
-    return redirect('home')
+    return redirect('product:home')
 
 
 class IndexView(generic.ListView):
