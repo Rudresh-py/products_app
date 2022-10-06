@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{% static 'product/style.css' %}" >
 
 <button><a href="{% url 'product:create' %}">Create</a></button> <br>
-
+<h3>Hello {{ fname }}</h3>
 {% if product_list %}
 
     {% for product in product_list %}
