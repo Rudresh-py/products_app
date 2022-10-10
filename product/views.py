@@ -31,7 +31,7 @@ def signup(request):
 
         messages.success(request, "your Account has been successfully created")
 
-        return redirect('signin')
+        return redirect('product:signin')
 
     return render(request, "product/signup.html")
 
@@ -49,7 +49,7 @@ def signin(request):
             return render(request, 'product/index.html', {"fname": fname})
         else:
             messages.error(request, "Bad Credentials!!")
-            return redirect('product:index')
+            return redirect('product:home')
 
     return render(request, "product/signin.html")
 
